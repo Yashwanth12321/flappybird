@@ -1,2 +1,2 @@
 # flappybird
-falppy bird with minimal ui
+flppy bird with minimal ui
