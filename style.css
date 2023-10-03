@@ -1,0 +1,79 @@
+:root {
+  --speed: 3000ms;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.game {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-image: url(/assets/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 5px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.bird {
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  transition: top 100ms linear;
+  border-radius: 100%;
+}
+
+.pipe {
+  width: 50px;
+
+  height: 40%;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 100%;
+
+  background-image: url(/assets/pipe.png);
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  transform: rotate(180deg);
+}
+
+.pipe:nth-child(2) {
+  height: 35%;
+  top: 65%;
+  transform: rotate(360deg);
+}
+@keyframes move {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -50px;
+  }
+}
+.obstacles {
+  animation: move var(--speed) linear infinite;
+}
+
+.score {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+}
